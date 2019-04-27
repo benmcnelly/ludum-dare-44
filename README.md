@@ -10,8 +10,9 @@ Just realized LD is this weekend!
 # Scratchpad
 
 ### Rules
-- When you take damage you lose money
-- When you get money you get health
+- When you take damage you lose health and money
+- You can trade health for money
+- You can trade money for health at a worse rate
 - When you lose time you lose health and money
 - You cant get time back
 
