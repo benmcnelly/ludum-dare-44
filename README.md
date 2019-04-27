@@ -25,3 +25,9 @@ Just realized LD is this weekend!
 - At the end of the round your life debt is taken out if you lose, better hope you have enough health left for that...
 - If you win you keep your wagered life pluss your winnings, but face harder and more enemy forces
 - Maybe some traps and platformer basics
+
+# Game Types
+- FPS ( simple and fits the narative )
+- Top Down ( not a big fan of shooting game with top down, more for adventure or exploring )
+- Side Scroller ( Could be fun but pretty played out, might be better for mobile though )
+- Couch game ( Won't score high but we would have fun... )
