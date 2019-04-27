@@ -1,4 +1,4 @@
-# ludum-dare-44
+# Ludum Dare 44
 Just realized LD is this weekend!
 
 ## Theme
