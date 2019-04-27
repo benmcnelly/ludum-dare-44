@@ -22,6 +22,6 @@ Just realized LD is this weekend!
 
 ### Gamble with life game
 - Health, starting money for weapons, Extras, all cost life debt
-- At the end of the round your life debt is taken out if you lose
+- At the end of the round your life debt is taken out if you lose, better hope you have enough health left for that...
 - If you win you keep your wagered life pluss your winnings, but face harder and more enemy forces
 - Maybe some traps and platformer basics
