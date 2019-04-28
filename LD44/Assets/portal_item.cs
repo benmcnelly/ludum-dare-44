@@ -6,6 +6,9 @@ public class portal_item : MonoBehaviour
 {
 
     public GameObject target_portal;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +27,8 @@ public class portal_item : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.transform.position = target_portal.transform.position;
+            var the_player = collision.gameObject;
+            the_player.transform.position = target_portal.transform.Find("landing_zone").gameObject.transform.position;
         }
     }
 }
