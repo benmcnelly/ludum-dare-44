@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class pickup_item : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class pickup_item : MonoBehaviour
     public int worth = 1;
     public int heft = 1;
     public bool allarmed = false;
+    public Text gui_text;
 
     // Start is called before the first frame update
     void Start()
@@ -21,13 +23,13 @@ public class pickup_item : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("bam");
+        Debug.Log("OnCollisionEnter2D");
 
-        if (collision.otherCollider.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("playerhitme");
+            Debug.Log("I can detect player!");
         }
     }
 }
