@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class portal_item : MonoBehaviour
 {
+
     public GameObject target_portal;
     // Start is called before the first frame update
     void Start()
@@ -15,5 +16,15 @@ public class portal_item : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("OnCollisionEnter2D");
+
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.transform.position = target_portal.transform.position;
+        }
     }
 }
