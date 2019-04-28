@@ -23,8 +23,6 @@ public class portal_item : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("OnCollisionEnter2D");
-
         if (collision.gameObject.tag == "Player")
         {
             var the_player = collision.gameObject;

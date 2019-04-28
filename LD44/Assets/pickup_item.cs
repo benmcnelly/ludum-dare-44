@@ -9,7 +9,8 @@ public class pickup_item : MonoBehaviour
     public int worth = 1;
     public int heft = 1;
     public bool allarmed = false;
-    public Text gui_text;
+    public string about_text;
+    private object newtext;
 
     // Start is called before the first frame update
     void Start()
@@ -23,13 +24,24 @@ public class pickup_item : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D (Collider2D collision)
     {
-        Debug.Log("OnCollisionEnter2D");
 
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("I can detect player!");
+           
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                BagController.bag_weight += heft;
+                BagController.monies += worth;
+                if (allarmed == true)
+                {
+                    BagController.alarm = true;
+                }
+                // oh and delete this...
+                Destroy(this.gameObject);
+            }
+
         }
     }
 }
