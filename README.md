@@ -9,7 +9,7 @@ Just realized LD is this weekend!
 # Going with HIEST GAME
 
 ## Steps
-- 
+- Create characters  with illustrator
 
 # Scratchpad
 
