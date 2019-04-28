@@ -20,4 +20,14 @@ public class pickup_item : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("bam");
+
+        if (collision.otherCollider.gameObject.tag == "Player")
+        {
+            Debug.Log("playerhitme");
+        }
+    }
 }
