@@ -9,7 +9,9 @@ Just realized LD is this weekend!
 # Going with HIEST GAME
 
 ## Steps
-- Create characters  with illustrator
+- Tilemaps (1x1 grid @ 128px)
+- E to interact
+- Logic script to controll bag and loot interactions
 
 # Scratchpad
 
@@ -36,5 +38,3 @@ Just realized LD is this weekend!
 - Top Down ( not a big fan of shooting game with top down, more for adventure or exploring )
 - Side Scroller ( Could be fun but pretty played out, might be better for mobile though )
 - Couch game ( Won't score high but we would have fun... )
-
-# 
