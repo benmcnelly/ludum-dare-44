@@ -6,6 +6,10 @@ Just realized LD is this weekend!
 
 ![White Board](https://i.imgur.com/caqANXx.jpg)
 
+# Going with HIEST GAME
+
+## Steps
+- 
 
 # Scratchpad
 
@@ -32,3 +36,5 @@ Just realized LD is this weekend!
 - Top Down ( not a big fan of shooting game with top down, more for adventure or exploring )
 - Side Scroller ( Could be fun but pretty played out, might be better for mobile though )
 - Couch game ( Won't score high but we would have fun... )
+
+# 
