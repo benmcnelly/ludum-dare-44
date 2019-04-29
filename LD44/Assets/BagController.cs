@@ -24,12 +24,14 @@ public class BagController : MonoBehaviour
     public AudioClip main_loop;
     public AudioClip allert_loop;
 
+    public AudioSource audioData;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        audioData = GetComponent<AudioSource>();
+        audioData.Play(0);
     }
 
     // Update is called once per frame
