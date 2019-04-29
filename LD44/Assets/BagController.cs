@@ -15,9 +15,14 @@ public class BagController : MonoBehaviour
     public Text explainer_text;
     public static bool bag_weight_change = false;
 
+    // vars
     public GameObject lostMonies;
     public GameObject lostHearts;
     public bool alive = true;
+
+    // Audio things
+    public AudioClip main_loop;
+    public AudioClip allert_loop;
 
 
 
@@ -64,17 +69,20 @@ public class BagController : MonoBehaviour
 
         if (collision.gameObject.tag == "Gaurd")
         {
-            if ( monies > 0 )
+            if (monies > 0 && alarm == true)
             {
                 monies = monies - 5;
                 GameObject monies_ps = (GameObject)GameObject.Instantiate(lostMonies);
                 monies_ps.transform.position = transform.position;
-            } 
+            }
             else
             {
-                health = health - 3;
-                GameObject heart_ps = (GameObject)GameObject.Instantiate(lostHearts);
-                heart_ps.transform.position = transform.position;
+                if (health > 0 && alarm == true)
+                {
+                    health = health - 3;
+                    GameObject heart_ps = (GameObject)GameObject.Instantiate(lostHearts);
+                    heart_ps.transform.position = transform.position;
+                }
             }
         }
     }

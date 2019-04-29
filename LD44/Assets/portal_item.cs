@@ -6,6 +6,9 @@ public class portal_item : MonoBehaviour
 {
 
     public GameObject target_portal;
+    public AudioClip portal_sound;
+
+    public AudioSource source;
 
 
 
@@ -27,6 +30,7 @@ public class portal_item : MonoBehaviour
         {
             var the_player = collision.gameObject;
             the_player.transform.position = target_portal.transform.Find("landing_zone").gameObject.transform.position;
+            source.PlayOneShot(portal_sound, 0.9f);
         }
 
         if (collision.gameObject.tag == "Old_Gaurd")
