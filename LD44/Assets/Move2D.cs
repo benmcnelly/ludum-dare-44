@@ -6,7 +6,7 @@ public class Move2D : MonoBehaviour
 {
 
 
-    public float speed;
+    public static float speed = 10f;
     protected bool isUserMoving;
     protected Dictionary<KeyCode, bool> pressedKeys;
     protected HashSet<KeyCode> allowedKeys;
