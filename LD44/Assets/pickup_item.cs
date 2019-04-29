@@ -10,7 +10,7 @@ public class pickup_item : MonoBehaviour
     public float heft = 1f;
     public bool allarmed = false;
     public string about_text;
-    public Sprite preview_image;
+    public Texture preview_image;
 
 
     private object newtext;
@@ -34,7 +34,14 @@ public class pickup_item : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             pdaController.pda_update = about_text;
-            pda_previewImage.current_sprite = preview_image;
+            if (preview_image != null)
+            {
+                pda_previewImage.load_texture = preview_image;
+            } else
+            {
+                pda_previewImage.load_texture = null;
+            }
+            
 
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -49,6 +56,7 @@ public class pickup_item : MonoBehaviour
                 pdaController.pda_update = "YOINK";
                 taken = true;
                 Destroy(this.gameObject);
+                pda_previewImage.load_texture = null;
             }
 
         }
@@ -61,9 +69,12 @@ public class pickup_item : MonoBehaviour
             if(taken == true)
             {
                 pdaController.pda_update = "Yoink";
+                pda_previewImage.load_texture = null;
+
             } else
             {
                 pdaController.pda_update = "Moving on...";
+                pda_previewImage.load_texture = null;
             }
             
         }

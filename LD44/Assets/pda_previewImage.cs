@@ -5,29 +5,29 @@ using UnityEngine.UI;
 
 public class pda_previewImage : MonoBehaviour
 {
-    Sprite spriteImageCompenent;
+    RawImage self_RawImage;
+    public Texture start_texture;
+    public static Texture load_texture;
 
-    public Sprite loaded_sprite;
-    public static Sprite current_sprite;
-
-    private void Awake()
+    private void Start()
     {
-        spriteImageCompenent = GetComponent<Sprite>();
+        self_RawImage = GetComponent<RawImage>();
+        self_RawImage.texture = start_texture;
     }
-
 
     // Start is called before the first frame update
     void Update()
     {
-        if (current_sprite)
+        if (load_texture != null)
         {
-            spriteImageCompenent = current_sprite;
+            self_RawImage = GetComponent<RawImage>();
+            self_RawImage.texture = load_texture;
+        } else
+        {
+            self_RawImage = GetComponent<RawImage>();
+            self_RawImage.texture = start_texture;
         }
     }
 
-    void updateSprite()
-    {
-
-    }
 
 }

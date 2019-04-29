@@ -28,5 +28,11 @@ public class portal_item : MonoBehaviour
             var the_player = collision.gameObject;
             the_player.transform.position = target_portal.transform.Find("landing_zone").gameObject.transform.position;
         }
+
+        if (collision.gameObject.tag == "Old_Gaurd")
+        {
+            var the_gaurd = collision.gameObject;
+            the_gaurd.transform.position = target_portal.transform.Find("landing_zone").gameObject.transform.position;
+        }
     }
 }
