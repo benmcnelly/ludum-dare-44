@@ -14,6 +14,8 @@ public class dead : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        credits.endgame_info = "You escaped with " + BagController.monies + " monies!";
         
     }
 
