@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BagController : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class BagController : MonoBehaviour
     public static bool alarm = false;
     public Text explainer_text;
     public static bool bag_weight_change = false;
+    public bool alarm_muscic_on = false;
 
     // vars
     public GameObject lostMonies;
@@ -23,8 +25,13 @@ public class BagController : MonoBehaviour
     // Audio things
     public AudioClip main_loop;
     public AudioClip allert_loop;
+    public AudioClip hit_1;
+    public AudioClip hit_2;
+    public AudioClip hit_3;
 
     public AudioSource audioSource;
+    public AudioSource oneOffs;
+
 
 
     // Start is called before the first frame update
@@ -32,8 +39,11 @@ public class BagController : MonoBehaviour
     {
         audioSource.loop = true;
         audioSource.clip = main_loop;
-        audioSource.volume = 0.6f;
+        audioSource.volume = 0.4f;
         audioSource.Play();
+        monies = 0;
+        health = 40;
+        alarm = false;
     }
 
     // Update is called once per frame
@@ -51,11 +61,23 @@ public class BagController : MonoBehaviour
             alive = false;
         }
 
-        
+        if (alarm == true && alarm_muscic_on == false)
+        {
+            audioSource.Stop();
+            audioSource.loop = true;
+            audioSource.clip = allert_loop;
+            audioSource.volume = 0.6f;
+            audioSource.Play();
+            alarm_muscic_on = true;
+        }
+
 
         if (alive == false)
         {
-            // endgame
+            health = 40;
+            monies = 0;
+            alarm = false;
+            SceneManager.LoadScene("dead", LoadSceneMode.Single);
         }
 
 
@@ -78,6 +100,7 @@ public class BagController : MonoBehaviour
                 monies = monies - 5;
                 GameObject monies_ps = (GameObject)GameObject.Instantiate(lostMonies);
                 monies_ps.transform.position = transform.position;
+                oneOffs.PlayOneShot(hit_1, 0.8F);
             }
             else
             {
@@ -86,6 +109,7 @@ public class BagController : MonoBehaviour
                     health = health - 3;
                     GameObject heart_ps = (GameObject)GameObject.Instantiate(lostHearts);
                     heart_ps.transform.position = transform.position;
+                    oneOffs.PlayOneShot(hit_3, 0.8F);
                 }
             }
         }

@@ -12,6 +12,7 @@ public class Move2D : MonoBehaviour
     protected HashSet<KeyCode> allowedKeys;
     protected int numAllowedKeys;
     protected KeyCode rudder;
+    public AudioSource audioSource;
 
     private Dictionary<KeyCode, bool> initializeKeys()
     {
@@ -119,6 +120,7 @@ public class Move2D : MonoBehaviour
         {
             //Get delta keys of pressed keys of this frame compared to the previous frame
             List<KeyCode> deltaKeys = new List<KeyCode>();
+            
 
             //We iterate through the pressedKeys & previous keys to get the Deltas
             using (var e1 = pressedKeys.GetEnumerator())
@@ -128,6 +130,8 @@ public class Move2D : MonoBehaviour
                 {
                     var e1_current = e1.Current;
                     var e2_current = e2.Current;
+                    // audioSource.Play();
+
 
                     if (e2_current.Value == false && e1_current.Value == true)
                     {

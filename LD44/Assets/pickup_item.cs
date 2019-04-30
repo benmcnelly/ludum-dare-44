@@ -11,7 +11,7 @@ public class pickup_item : MonoBehaviour
     public bool allarmed = false;
     public string about_text;
     public Texture preview_image;
-
+    public AudioSource audioSource;
 
     private object newtext;
     private bool taken = false;
@@ -55,8 +55,9 @@ public class pickup_item : MonoBehaviour
                 // oh and delete this...
                 pdaController.pda_update = "YOINK";
                 taken = true;
-                Destroy(this.gameObject);
+                audioSource.Play();
                 pda_previewImage.load_texture = null;
+                Destroy(this.gameObject);
             }
 
         }
